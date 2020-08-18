@@ -53,20 +53,24 @@ describe('Park', function() {
     park.addDino(dinosaur3);
     park.addDino(dinosaur4);
     const actual = park.findSpecies("triceratops");
-    assert.deepStrictEqual(actual, [dinosaur3, dinosaur4])
+    assert.deepStrictEqual(actual, [dinosaur3, dinosaur4]);
   });
 
   it('should be able to calculate the total number of visitors per day', function () {
     const actual = park.dailyVisitors();
-    assert.strictEqual(actual, 87)
+    assert.strictEqual(actual, 87);
   });
 
   it('should be able to calculate the total number of visitors per year', function () {
     const actual = park.yearlyVisitors();
     const expected = 87 * 365
-    assert.strictEqual(actual, expected)
+    assert.strictEqual(actual, expected);
   });
 
-  it('should be able to calculate total revenue for one year');
+  it('should be able to calculate total revenue for one year', function () {
+    const actual = park.yearlyRevenue();
+    const expected = (87 * 365) * 10.50;
+    assert.strictEqual(actual, expected);
+  });
 
 });
