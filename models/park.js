@@ -46,4 +46,10 @@ Park.prototype.dailyVisitors = function () {
     return visitors;
 }
 
+Park.prototype.yearlyVisitors = function () {
+    let visitors = this.dailyVisitors();
+    visitors *= 365;
+    return visitors;
+}
+
 module.exports = Park;
