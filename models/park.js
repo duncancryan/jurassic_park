@@ -52,4 +52,10 @@ Park.prototype.yearlyVisitors = function () {
     return visitors;
 }
 
+Park.prototype.yearlyRevenue = function () {
+    let visitors = this.yearlyVisitors();
+    let revenue = visitors * this.ticketPrice;
+    return revenue;
+}
+
 module.exports = Park;
