@@ -25,7 +25,18 @@ Park.prototype.findTopDino = function () {
             topDino = dino
         }
     }
-    return topDino
+    return topDino;
+}
+
+Park.prototype.findSpecies = function (species) {
+    let foundDinos = [];
+    for (let dino of this.dinosaurs) {
+        if (species === dino.species) {
+            foundDinos.push(dino)
+        }
+    }
+    return foundDinos;
+
 }
 
 module.exports = Park;
