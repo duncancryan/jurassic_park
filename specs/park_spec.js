@@ -42,6 +42,7 @@ describe('Park', function() {
   });
 
   it('should be able to find the dinosaur that attracts the most visitors', function () {
+    park.addDino(dinosaur3);
     const actual = park.findTopDino();
     assert.deepStrictEqual(actual, dinosaur3);
   });

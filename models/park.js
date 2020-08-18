@@ -19,15 +19,13 @@ Park.prototype.removeDino = function (dinosaur) {
 }
 
 Park.prototype.findTopDino = function () {
-    let largestNumber = 0;
+    let topDino = this.dinosaurs[0];
     for (let dino of this.dinosaurs) {
-        if (dino.guestsAttractedPerDay > largestNumber) {
-            largestNumber = dino.guestsAttractedPerDay;
-        }
-        if (dino.guestsAttractedPerDay === largestNumber) {
-            return dino
+        if (dino.guestsAttractedPerDay > topDino.guestsAttractedPerDay) {
+            topDino = dino
         }
     }
+    return topDino
 }
 
 module.exports = Park;
