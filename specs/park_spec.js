@@ -11,7 +11,7 @@ describe('Park', function() {
     dinosaur1 = new Dinosaur('t-rex', 'carnivore', 50);
     dinosaur2 = new Dinosaur('velociraptor', 'carnivore', 37);
     dinosaur3 = new Dinosaur('triceratops', 'herbivore', 28);
-    park = new Park('Jurassic Park', 10.50)
+    park = new Park('Jurassic Park', 10.50, [dinosaur1, dinosaur2])
   })
 
   it('should have a name', function () {
