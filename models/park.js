@@ -17,6 +17,7 @@ Park.prototype.removeDino = function (dinosaur) {
     }
     this.dinosaurs = dinosToKeep;
 }
+// for the above you can find the index of the dinosaur and then splice it, this will not use a loop and would be more efficient.
 
 Park.prototype.findTopDino = function () {
     let topDino = this.dinosaurs[0];
