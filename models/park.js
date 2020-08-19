@@ -68,5 +68,18 @@ Park.prototype.removeSpecies = function (species) {
     this.dinosaurs = dinosToKeep;
 }
 
+Park.prototype.countDiets = function () {
+    let diets = {'carnivore': 0, 'herbivore': 0};
+    for (let dino of this.dinosaurs) {
+        if (dino.diet === 'carnivore') {
+            diets['carnivore'] += 1;
+        }
+        if (dino.diet === 'herbivore') {
+            diets['herbivore'] += 1;
+        }
+    }
+    return diets;
+}
+
 
 module.exports = Park;
