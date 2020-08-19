@@ -69,18 +69,33 @@ Park.prototype.removeSpecies = function (species) {
     this.dinosaurs = dinosToKeep;
 }
 
+// Park.prototype.countDiets = function () {
+//     let diets = {'carnivore': 0, 'herbivore': 0};
+//     for (let dino of this.dinosaurs) {
+//         if (dino.diet === 'carnivore') {
+//             diets['carnivore'] += 1;
+//         }
+//         if (dino.diet === 'herbivore') {
+//             diets['herbivore'] += 1;
+//         }
+//     }
+//     return diets;
+// }
+
+// above is incorrect, below is corrected function
+
 Park.prototype.countDiets = function () {
-    let diets = {'carnivore': 0, 'herbivore': 0};
+    const dinosByDiet = {};
     for (let dino of this.dinosaurs) {
-        if (dino.diet === 'carnivore') {
-            diets['carnivore'] += 1;
-        }
-        if (dino.diet === 'herbivore') {
-            diets['herbivore'] += 1;
+        if (dinosByDiet[dino.diet]) { // square brackets have to be used here
+            dinosByDiet[dino.diet] += 1; // this checks for the presence of the key and increments the value if it exists
+        } else {
+            dinosByDiet[dino.diet] = 1; //this is an assignment which also CREATES a key, simple principle that I missed
         }
     }
-    return diets;
+    return dinosByDiet;
 }
+
 
 
 module.exports = Park;
